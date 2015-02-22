@@ -43,13 +43,13 @@ public class Driver {
 		*/
 		
 		
-		/*
+		
 		SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
 				MainFrame frame = new MainFrame("Briscola|McHacks 2015");
 				frame.showGUI();
 			}
-		});*/
+		});
 		Network client = new Network();
 		client.connect();
 		System.out.println("Connected");
@@ -60,15 +60,22 @@ public class Driver {
 			Deck deck = (Deck) client.getOis().readObject();
 			Board game = (Board) client.getOis().readObject();
 			
-			while(deck.size() <= 0){
-				game.playRound(you.playCard(0), opponent.playCard(0));///GUI TO CHOOSE CARD HERE
+			while(deck.size() >= 2){
+				game.playRound(you.playCard(0), opponent.playCard(0));//will need to be replaced by implementing the bottom
+				/// TODO when user who is first to act, clicks on the card they want to play, it must be chosen accordingly and sent to the server, 
+				//the server should then send the card chosen to the other client so that the person who is second to act can see the choice.
+				//Once the player who is second to act makes his choice it should be sent back to the server again, and the server should send it back to the first client
+				//perhaps some animations
+				//and that concludes one interation of this while loop
 				if (you.isFirst())
 				{
+					//TODO fetch the cards directly from the server instead of picking them up on the client
 					you.addToHand(deck);
 					opponent.addToHand(deck);
 				}
 				else if (opponent.isFirst())
 				{
+					//TODO fetch the cards directly from the server instead of picking them (from the deck), on the client
 					opponent.addToHand(deck);
 					you.addToHand(deck);
 				}
