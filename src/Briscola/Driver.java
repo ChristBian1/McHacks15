@@ -7,13 +7,45 @@ public class Driver {
 
 	public static void main(String []args){
 		
-	
+		Player one= new Player();
+		Player two= new Player();
 		Deck deck=new Deck();
 		deck.shuffle();
-		System.out.println(deck);
+		Board game= new Board(deck);
+		one.setHand(deck);
+		two.setHand(deck);
+		one.setFirst(true);
 		
-		System.out.println("\n"+deck.draw());
-		System.out.println(deck);
+		while(deck.size()>2)
+		{
+			System.out.println(one.getHand());
+			System.out.println(two.getHand());
+
+			game.playRound(one.playCard(0), two.playCard(0));
+			if (one.isFirst())
+			{
+				one.addToHand(deck);
+				two.addToHand(deck);
+			}
+			else
+			{
+				two.addToHand(deck);
+				one.addToHand(deck);
+			}
+		}
+		
+		System.out.println(one.getHand());
+		System.out.println(two.getHand());
+		game.playRound(one.playCard(0), two.playCard(0));
+		System.out.println(one.getHand());
+		System.out.println(two.getHand());
+		game.playRound(one.playCard(0), two.playCard(0));
+		System.out.println(one.getHand());
+		System.out.println(two.getHand());
+		game.playRound(one.playCard(0), two.playCard(0));
+		
+		
+		
 		/*
 		SwingUtilities.invokeLater(new Runnable() {
 			public void run() {

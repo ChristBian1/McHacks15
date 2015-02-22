@@ -5,7 +5,22 @@ public class Card {
 	
 	private int value,displayValue;
 	private Suit type;
+	private Player owner;
 	
+	/**
+	 * @return the owner
+	 */
+	public Player getOwner() {
+		return owner;
+	}
+
+	/**
+	 * @param owner the owner to set
+	 */
+	public void setOwner(Player owner) {
+		this.owner = owner;
+	}
+
 	public Card(int displayValue, Suit type){
 		this.type=type;
 		this.displayValue=displayValue;
@@ -55,6 +70,42 @@ public class Card {
 	
 	public String toString(){
 		return displayValue+ " of "+type;
+	}
+	
+	public boolean beats(Card card,Suit brisk)
+	{
+		if(this.type.equals(brisk))
+		{
+			if(card.getType().equals(brisk))
+			{
+				if(this.value>card.getValue())
+					return true;
+				else if(this.value==card.getValue())
+					return this.displayValue> card.getDisplayValue();
+				else
+					return false;
+			}
+			
+			else
+				
+				return true;
+				
+		}
+		else if(card.getType().equals(brisk))
+			return false;
+		else if(this.type.equals(card.getType()))
+		{
+
+			if(this.value>card.getValue())
+				return true;
+			else if(this.value==card.getValue())
+				return this.displayValue> card.getDisplayValue();
+			else
+				return false;
+		}
+		else 
+			return true;
+		
 	}
 }
 

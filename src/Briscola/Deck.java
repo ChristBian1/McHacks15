@@ -66,8 +66,11 @@ public class Deck {
 	
 	public Card setBrisk(){
 		Card first=deck.get(0);
-		deck.remove(0);
 		
 		return first;
+	}
+	
+	public int size(){
+		return deck.size();
 	}
 }
