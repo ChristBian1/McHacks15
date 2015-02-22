@@ -1,3 +1,4 @@
+
 package Briscola;
 
 import java.io.IOException;
@@ -8,10 +9,7 @@ import javax.swing.SwingUtilities;
 public class Driver {
 
 	public static void main(String []args){
-		
-		
-		
-		
+
 		/*
 		while(deck.size()>2)
 		{
@@ -43,14 +41,16 @@ public class Driver {
 		*/
 		
 		
-	
-		/*SwingUtilities.invokeLater(new Runnable() {
+		
+		SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
+				SplashPage splash = new SplashPage("Briscola|McHacks 2015");
 				MainFrame frame = new MainFrame("Briscola|McHacks 2015");
+				splash.showGUI();
 				frame.showGUI();
-				frame.placeImage();
 			}
-		});*/
+		});
+		
 		Network client = new Network();
 		client.connect();
 		System.out.println("Connected");
