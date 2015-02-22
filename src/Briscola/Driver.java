@@ -1,6 +1,8 @@
 
 package Briscola;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.IOException;
 
 import javax.swing.JFrame;
@@ -40,16 +42,16 @@ public class Driver {
 		game.playRound(one.playCard(0), two.playCard(0));
 		*/
 		
+		Test frame= new Test();
 		
-		
-		SwingUtilities.invokeLater(new Runnable() {
+		/*SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
 				SplashPage splash = new SplashPage("Briscola|McHacks 2015");
 				MainFrame frame = new MainFrame("Briscola|McHacks 2015");
 				splash.showGUI();
-				frame.showGUI();
+				//frame.showGUI();
 			}
-		});
+		});*/
 		
 		Network client = new Network();
 		client.connect();

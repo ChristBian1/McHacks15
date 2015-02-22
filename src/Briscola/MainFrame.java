@@ -6,11 +6,8 @@ import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.Toolkit;
 
-<<<<<<< HEAD
-import javax.swing.ImageIcon;
-=======
+
 import javax.swing.JButton;
->>>>>>> 1f693a72c77694ea1062c059d7204c965994e78a
 import javax.swing.JFrame;
 
 public class MainFrame extends JFrame{
