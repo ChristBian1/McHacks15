@@ -43,13 +43,15 @@ public class Driver {
 		*/
 		
 		
-		/*
+		
 		SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
+				SplashPage splash = new SplashPage("Briscola|McHacks 2015");
 				MainFrame frame = new MainFrame("Briscola|McHacks 2015");
+//				splash.showGUI();
 				frame.showGUI();
 			}
-		});*/
+		});
 		Network client = new Network();
 		client.connect();
 		System.out.println("Connected");

@@ -1,27 +1,25 @@
 package Briscola;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
-public class MainFrame extends JFrame{
+public class SplashPage extends JFrame{
 	
-	private Component com;
+	JButton button;
+	JPanel panel;
 	Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-	private JButton button;
-	    
-	public MainFrame(String title){
+	
+	public SplashPage(String title){
 		super(title);
-		
-		button = new JButton("Submit");
-		com = new Component();
-		this.add(com, BorderLayout.CENTER);
-		this.add(button, BorderLayout.SOUTH);
-		com.setBackground(Color.green);
+		panel = new JPanel();
+		button = new JButton("Connect");
+
+		this.add(panel);
+		panel.add(button);
 	}
 	
 	public void showGUI(){
@@ -29,4 +27,5 @@ public class MainFrame extends JFrame{
 		this.setVisible(true);	
 		this.setSize(screenSize);
 	}
+	
 }
