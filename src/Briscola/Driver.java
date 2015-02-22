@@ -8,10 +8,7 @@ import javax.swing.SwingUtilities;
 public class Driver {
 
 	public static void main(String []args){
-		
-		
-		
-		
+
 		/*
 		while(deck.size()>2)
 		{
@@ -52,6 +49,7 @@ public class Driver {
 				frame.showGUI();
 			}
 		});
+		
 		Network client = new Network();
 		client.connect();
 		System.out.println("Connected");
