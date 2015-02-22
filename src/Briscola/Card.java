@@ -1,7 +1,9 @@
 package Briscola;
 
+import java.io.Serializable;
 
-public class Card {
+
+public class Card implements Serializable{
 	
 	private int value,displayValue;
 	private Suit type;

@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.OutputStream;
+import java.io.Serializable;
 import java.net.InetAddress;
 import java.net.Socket;
 import java.util.logging.Level;
@@ -18,7 +19,7 @@ import java.util.logging.Logger;
  *
  * @author admin2
  */
-public class Network {
+public class Network implements Serializable{
     private Socket socket;
     private ObjectOutputStream oos;
     private ObjectInputStream ois;
@@ -35,7 +36,8 @@ public class Network {
             
             //oos.writeUTF(new String(InetAddress.getLocalHost().toString()));//1
         } catch (IOException ex) {
-            Logger.getLogger(Network.class.getName()).log(Level.SEVERE, null, ex);
+            //Logger.getLogger(Network.class.getName()).log(Level.SEVERE, null, ex);
+        	ex.printStackTrace();
         }
         
     }

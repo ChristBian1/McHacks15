@@ -1,8 +1,9 @@
 package Briscola;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Board {
+public class Board implements Serializable{
 
 	private Suit briskSuit;
 	private Deck deck;

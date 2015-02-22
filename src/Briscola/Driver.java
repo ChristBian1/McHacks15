@@ -1,5 +1,7 @@
 package Briscola;
 
+import java.io.IOException;
+
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
@@ -7,15 +9,10 @@ public class Driver {
 
 	public static void main(String []args){
 		
-		Player one= new Player();
-		Player two= new Player();
-		Deck deck=new Deck();
-		deck.shuffle();
-		Board game= new Board(deck);
-		one.setHand(deck);
-		two.setHand(deck);
-		one.setFirst(true);
 		
+		
+		
+		/*
 		while(deck.size()>2)
 		{
 			System.out.println(one.getHand());
@@ -43,7 +40,7 @@ public class Driver {
 		System.out.println(one.getHand());
 		System.out.println(two.getHand());
 		game.playRound(one.playCard(0), two.playCard(0));
-		
+		*/
 		
 		
 		/*
@@ -57,6 +54,31 @@ public class Driver {
 		client.connect();
 		System.out.println("Connected");
 		
+		try {
+			Player you = (Player) client.getOis().readObject();
+			Player opponent = (Player) client.getOis().readObject();
+			Deck deck = (Deck) client.getOis().readObject();
+			Board game = (Board) client.getOis().readObject();
+			
+			while(deck.size() <= 0){
+				game.playRound(you.playCard(0), opponent.playCard(0));///GUI TO CHOOSE CARD HERE
+				if (you.isFirst())
+				{
+					you.addToHand(deck);
+					opponent.addToHand(deck);
+				}
+				else if (opponent.isFirst())
+				{
+					opponent.addToHand(deck);
+					you.addToHand(deck);
+				}
+				
+				
+			}
+		} catch (ClassNotFoundException | IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 	

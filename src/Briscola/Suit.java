@@ -1,6 +1,8 @@
 package Briscola;
 
-public enum Suit {
+import java.io.Serializable;
+
+public enum Suit implements Serializable{
 	BASTONI,
 	SPADE,
 	DENARI,

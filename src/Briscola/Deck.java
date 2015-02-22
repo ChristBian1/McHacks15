@@ -1,9 +1,10 @@
 package Briscola;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class Deck {
+public class Deck implements Serializable{
 	
 	private final int DECK_SIZE=40;
 	private ArrayList<Card> deck = new ArrayList<Card>();
