@@ -23,7 +23,7 @@ public class Network {
     private ObjectOutputStream oos;
     private ObjectInputStream ois;
    
-    private String host = "ec2-52-10-202-71.us-west-2.compute.amazonaws.com";
+    private String host = "127.0.0.1";
     private int port = 7685;
     
     
@@ -33,7 +33,7 @@ public class Network {
             setOos(new ObjectOutputStream(getSocket().getOutputStream()));
             setOis(new ObjectInputStream(getSocket().getInputStream()));
             
-            oos.writeUTF(new String(InetAddress.getLocalHost().toString()));//1
+            //oos.writeUTF(new String(InetAddress.getLocalHost().toString()));//1
         } catch (IOException ex) {
             Logger.getLogger(Network.class.getName()).log(Level.SEVERE, null, ex);
         }

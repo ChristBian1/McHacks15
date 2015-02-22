@@ -12,6 +12,7 @@ import java.io.OutputStream;
 import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -25,13 +26,13 @@ public class Server {
     private ObjectOutputStream oos;
     private ObjectInputStream ois;
    
-    private String host = "ec2-52-10-202-71.us-west-2.compute.amazonaws.com";
+    private String host = "127.0.0.1";
     private int port = 7685;
     
-    private String[] listOfIPs;
+    private ArrayList<Socket> listOfIPs;
     
     public Server() {
-        this.listOfIPs = new String[2];
+        this.listOfIPs = new ArrayList<Socket>();
     }
     
     
@@ -49,6 +50,7 @@ public class Server {
                 Thread.sleep(1000);//Wait for two players to connect
             }
             //both players connected to server
+            System.out.println("both clients connected");
             
             
             
@@ -67,8 +69,8 @@ public class Server {
         public void run() {
             try {
                 socket  = serversocket.accept();
-                String address = socket.getInetAddress().toString();
-                System.out.println(address);
+                listOfIPs.add(socket);
+                System.out.println(socket.getInetAddress().getCanonicalHostName());
             } catch (IOException ex) {
                 Logger.getLogger(Server.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -77,9 +79,9 @@ public class Server {
     
      private boolean twoPlayersConnected(){
             boolean result =true;
-            for (String i: listOfIPs){
+            for (Socket i: listOfIPs){
                 if (i.equals(null))
-                    result= false;                    
+                    result= false;                  
             }
             return result;
         }
