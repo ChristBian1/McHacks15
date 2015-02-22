@@ -10,16 +10,11 @@ public class Driver {
 		System.out.println("Robby knows nothing at all, really.");
 		SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
-				showGUI();
+				MainFrame frame = new MainFrame("Briscola|McHacks 2015");
+				frame.showGUI();
 			}
 		});
 	}
 	
-	public static void showGUI(){
-		JFrame frame = new JFrame("Briscola|McHacks 2015");
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
-	
-		frame.setVisible(true);		
-	}
+
 }
