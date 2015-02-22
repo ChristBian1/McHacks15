@@ -7,7 +7,11 @@ public class Driver {
 
 	public static void main(String []args){
 		
-		System.out.println("Robby knows nothing at all, really.");
+	
+		Deck deck=new Deck();
+		
+		System.out.println(deck);
+		
 		SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
 				showGUI();
