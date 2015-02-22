@@ -3,8 +3,10 @@ package Briscola;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Image;
 import java.awt.Toolkit;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 public class MainFrame extends JFrame{
@@ -19,6 +21,7 @@ public class MainFrame extends JFrame{
 		this.add(com, BorderLayout.CENTER);
 		com.setBackground(Color.green);
 	}
+	
 	
 	public void showGUI(){
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

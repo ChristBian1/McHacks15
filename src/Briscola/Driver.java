@@ -46,11 +46,12 @@ public class Driver {
 		
 		
 		
-		/*
-		SwingUtilities.invokeLater(new Runnable() {
+	
+		/*SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
 				MainFrame frame = new MainFrame("Briscola|McHacks 2015");
 				frame.showGUI();
+				frame.placeImage();
 			}
 		});*/
 		Network client = new Network();
