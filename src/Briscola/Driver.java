@@ -9,15 +9,18 @@ public class Driver {
 		
 	
 		Deck deck=new Deck();
-		
+		deck.shuffle();
 		System.out.println(deck);
 		
+		System.out.println("\n"+deck.draw());
+		System.out.println(deck);
+		/*
 		SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
 				MainFrame frame = new MainFrame("Briscola|McHacks 2015");
 				frame.showGUI();
 			}
-		});
+		});*/
 	}
 	
 
