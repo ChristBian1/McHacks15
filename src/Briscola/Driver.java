@@ -21,7 +21,12 @@ public class Driver {
 				frame.showGUI();
 			}
 		});*/
+		Network client = new Network();
+		client.connect();
+		System.out.println("Connected");
+		
+		
 	}
 	
-
+	
 }
