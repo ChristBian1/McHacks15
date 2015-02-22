@@ -1,9 +1,10 @@
 package Briscola;
 
+import java.io.Serializable;
 import java.net.InetAddress;
 import java.util.ArrayList;
 
-public class Player {
+public class Player implements Serializable{
     //InetAddress
     
     private ArrayList<Card> hand= new ArrayList<Card>();
